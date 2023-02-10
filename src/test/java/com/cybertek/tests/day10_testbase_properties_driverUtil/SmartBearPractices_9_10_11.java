@@ -8,15 +8,31 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 public class SmartBearPractices_9_10_11 extends TestBase {
 
 
 
     @Test
-    public void p9_delete_order_task(){
-        driver.get("http://secure.smartbearsoftware.com/samples/testcomplete12/WebOrders/login.aspx");
+    public void p9_delete_order_task() throws IOException {
+
+        //Creating properties object to be able to read properties file
+
+        Properties p1 = new Properties();
+
+        // Opening file in JVM memory using fileinputstream object
+        FileInputStream f1 = new FileInputStream("configuration.properties");
+
+        // Loading file into properties object
+        p1.load(f1);
+        String url = p1.getProperty("SmartbearURL");
+
+
+        driver.get(url);
         SmartBearUtilities.logintoSmartBear(driver);
 
 

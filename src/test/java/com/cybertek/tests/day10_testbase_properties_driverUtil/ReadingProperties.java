@@ -18,9 +18,9 @@ public class ReadingProperties {
         FileInputStream file1 = new FileInputStream(path);
 
         properties1.load(file1);
-        
 
-
+        System.out.println("properties1.getProperty() = " + properties1.getProperty("browser"));
+        System.out.println("properties1.getProperty(\"username\") = " + properties1.getProperty("username"));
 
 
     }
