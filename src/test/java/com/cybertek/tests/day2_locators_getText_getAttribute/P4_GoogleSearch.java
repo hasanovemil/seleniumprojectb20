@@ -1,10 +1,12 @@
 package com.cybertek.tests.day2_locators_getText_getAttribute;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class P1_GoogleTitleVerification {
+public class P4_GoogleSearch {
 
     public static void main(String[] args) {
 
@@ -14,13 +16,14 @@ public class P1_GoogleTitleVerification {
 
         driver.get("https://www.google.com");
 
-        String expectedtitle = "Google";
-        String actualTitle = driver.getTitle();;
+        driver.findElement(By.name("q")).sendKeys("apple"+ Keys.ENTER);
 
+        String expectedtitle = "apple - Google Search";
+        String actualTitle = driver.getTitle();
         if(actualTitle.equals(expectedtitle)){
-            System.out.println("Title verification PASSED!");
+            System.out.println("Search title verification passed!");
         }else{
-            System.out.println("Title verification FAILED!");
+            System.out.println("Search title veriication failed!");
         }
 
 
