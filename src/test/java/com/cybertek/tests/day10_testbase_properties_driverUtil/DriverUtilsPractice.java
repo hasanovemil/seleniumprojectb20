@@ -13,7 +13,7 @@ public class DriverUtilsPractice {
     @Test
     public void simple_google_search_test(){
 
-        Driver.getDriver().get("https://www.google.com");
+        Driver.getDriver().get("https://google.com");
 
         WebElement searchbox = Driver.getDriver().findElement(By.name("q"));
         String search = ConfigurationReader.getProperty("searchValue");
