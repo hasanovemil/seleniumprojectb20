@@ -18,4 +18,14 @@ public class SingletonPractices {
 
 
     }
+
+    @Test
+    public void singleton_test2(){
+
+        String str4 = Singleton.getWord();
+        System.out.println("str4 = " + str4);
+
+
+    }
+
 }
