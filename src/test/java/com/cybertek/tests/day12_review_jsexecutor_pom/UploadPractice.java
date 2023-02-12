@@ -1,5 +1,6 @@
 package com.cybertek.tests.day12_review_jsexecutor_pom;
 
+import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,7 +15,15 @@ public class UploadPractice {
 
         String path = "C:\\Users\\lenovo\\Desktop";
 
-        WebElement sikim = Driver.getDriver().findElement(By.id("file-upload"));
+        WebElement uploadinput = Driver.getDriver().findElement(By.id("file-upload"));
+        BrowserUtils.wait(3);
+        uploadinput.sendKeys(path);
+
+        WebElement uploadbutton = Driver.getDriver().findElement(By.id("file-submit"));
+        BrowserUtils.wait(2);
+        uploadbutton.click();
+
+
 
     }
 }
