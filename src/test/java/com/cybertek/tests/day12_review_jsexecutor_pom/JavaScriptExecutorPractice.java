@@ -51,6 +51,21 @@ public class JavaScriptExecutorPractice {
         WebElement emailInput = Driver.getDriver().findElement(By.name("email"));
         WebElement signupbutton = Driver.getDriver().findElement(By.name("wooden_spoon"));
 
+        BrowserUtils.wait(3);
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].setAttribute('value','Jane Done')",usernameInput);
+
+        BrowserUtils.wait(3);
+        js.executeScript("arguments[0].setAttribute('value','something@gmail.com')",emailInput);
+
+        BrowserUtils.wait(3);
+        js.executeScript("arguments[0].click()",signupbutton);
+
+
+
+
+
 
 
 
