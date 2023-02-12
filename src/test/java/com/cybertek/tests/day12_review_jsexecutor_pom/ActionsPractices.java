@@ -1,5 +1,6 @@
 package com.cybertek.tests.day12_review_jsexecutor_pom;
 
+import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -27,11 +28,29 @@ public class ActionsPractices {
 
         Assert.assertTrue(actual.contains(excepted));
 
+    }
 
+    @Test
+    public void p3_drag_and_drop(){
 
+        Driver.getDriver().get("https://demos.telerik.com/kendo-ui/dragdrop/index");
 
+        WebElement smallcircle = Driver.getDriver().findElement(By.id("draggable"));
+        WebElement bigcircle = Driver.getDriver().findElement(By.id("droptarget"));
 
+        Actions actions = new Actions(Driver.getDriver());
 
+        BrowserUtils.wait(15);
+
+        actions.dragAndDrop(smallcircle,bigcircle).perform();
+
+        String excepted = "You did great!";
+        String actual = bigcircle.getText();
+
+        Assert.assertTrue(actual.equals(excepted));
+
+        BrowserUtils.wait(2);
+        Driver.getDriver().close();
 
 
     }
