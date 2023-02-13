@@ -18,6 +18,9 @@ public class SmartBearUtilities {
 
            WebElement loginButton = driver.findElement(By.id("ctl00_MainContent_login_button"));
            loginButton.click();
+
+           WebElement errormessage = driver.findElement(By.id("ctl00_MainContent_status"));
+           errormessage.getAttribute("Invalid Login or Password.");
        }
 
 
