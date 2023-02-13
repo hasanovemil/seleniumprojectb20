@@ -8,16 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 
     public LoginPage(){
-
         PageFactory.initElements(Driver.getDriver(),this);
-
     }
-    @FindBy(id = "ctl00_MainContent_username") public WebElement Username;
 
+    @FindBy(id = "ctl00_MainContent_username") public WebElement Username;
      public WebElement usernameInput;
 
      @FindBy(id = "ctl00_MainContent_password") public WebElement password;
-
       public WebElement passwordinput;
 
       @FindBy(id = "ctl00_MainContent_login_button") public WebElement loginButton;

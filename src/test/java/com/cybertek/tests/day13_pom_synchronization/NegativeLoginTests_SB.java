@@ -7,13 +7,15 @@ import org.testng.annotations.Test;
 
 public class NegativeLoginTests_SB {
 
+    LoginPage loginPage;
+
     @Test(description = "entering incorrect username")
-    public void negative_login_test(){
+    public void negative_login_test1(){
 
         String url = ConfigurationReader.getProperty("Smartbearurl");
         Driver.getDriver().get(url);
 
-        LoginPage loginPage = new LoginPage();
+        loginPage = new LoginPage();
 
         String username = ConfigurationReader.getProperty("smartbear_username");
         loginPage.usernameInput.sendKeys("Tester");
@@ -25,5 +27,24 @@ public class NegativeLoginTests_SB {
 
 
 
+
+
     }
+
+    @Test(description = "using login method for negative tests")
+    public void negative_login_test2(){
+        String url = ConfigurationReader.getProperty("Smartbearurl");
+        Driver.getDriver().get(url);
+
+        loginPage = new LoginPage();
+
+        String username = "wrongusername";
+        String password = ConfigurationReader.getProperty("smartbear_password");
+
+
+
+
+    }
+
+
 }
