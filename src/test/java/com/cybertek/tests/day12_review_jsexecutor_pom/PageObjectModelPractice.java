@@ -8,7 +8,7 @@ public class PageObjectModelPractice {
     @Test
     public void login_to_smartbear(){
         LoginPage loginPage = new LoginPage();
-        loginPage.usernameinput.sendKeys("anyusername");
+        loginPage.usernameInput.sendKeys("anyusername");
 
 
     }
